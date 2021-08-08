@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using BankAccountParser.Types;
+using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace BankAccountParser.Benchmarks.Benchmarks
     public class BankAccountParserBenchmark
     {
         [Benchmark]
-        public void BenchmarkSimpleFormat()
+        public void BenchmarkParseSimpleFormat()
         {
             BaParser.parse("p-a/b");
         }

@@ -1,4 +1,4 @@
-﻿namespace BankAccountParser.Teams
+﻿namespace BankAccountParser.Types
 open System
 
 module BankAccount =

@@ -1,7 +1,7 @@
 ﻿namespace BankAccountParser.Interpreter
 open BankAccountParser.Parser.AbstractSyntaxTree
-open BankAccountParser.Teams.BankAccount.PublicTypes
-open BankAccountParser.Teams.BankAccount
+open BankAccountParser.Types.BankAccount.PublicTypes
+open BankAccountParser.Types.BankAccount
 open BankAccountParser.Types.BankAccountConstants
 
 module Types =

@@ -1,7 +1,7 @@
 ﻿namespace BankAccountParser.Parser.Tests
 
 open BankAccountParser.Parser.AbstractSyntaxTree
-open BankAccountParser.Teams.BankAccount.PublicTypes
+open BankAccountParser.Types.BankAccount.PublicTypes
 open Xunit.Abstractions
 open BankAccountParser.Parser.ParserTypes.Monads
 open BankAccountParser.Interpreter.Interpreter

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>BankAccountParser.Teams</RootNamespace>
+    <RootNamespace>BankAccountParser.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
