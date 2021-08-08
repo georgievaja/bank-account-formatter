@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>BankAccountParser.Teams</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="BankAccount.Types.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankAccountParser.Types\BankAccountParser.Types.fsproj" />
+  </ItemGroup>
+
+</Project>
