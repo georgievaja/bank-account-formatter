@@ -5,7 +5,7 @@ module BankAccount =
 
     module PublicTypes =
         
-        type DomesticBankAccount = 
+        type BankAccount = 
             {
                 Prefix: int32
                 AccountNumber: int64

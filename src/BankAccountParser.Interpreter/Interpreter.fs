@@ -4,7 +4,7 @@ open BankAccountParser.Teams.BankAccount.PublicTypes
 open BankAccountParser.Teams.BankAccount
 
 module Types =
-    type FormattingFunction = DomesticBankAccount -> string
+    type FormattingFunction = BankAccount -> string
 
     type UnexpectedFailureType =
         | UnsupportedExistsExpression

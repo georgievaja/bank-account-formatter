@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Identifiers.md" />
-    <None Include="Keywords.md" />
-    <Content Include="DataTypes.md" />
-    <None Include="Operators.md" />
+    <Content Include="Formats.md" />
   </ItemGroup>
 
 </Project>
