@@ -9,9 +9,7 @@ open BankPartParsers
 open SeparatorParsers
 
 module Parser =
-
-
-                
+               
     let pBankAccountFormatQuery : Parser<BankAccountFormatPart, unit> = 
         choicews [
             pBankAccountPart

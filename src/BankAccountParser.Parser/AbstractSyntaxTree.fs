@@ -1,8 +1,5 @@
 ﻿namespace BankAccountParser.Parser
 
-open System
-open ParserTypes.Monads
-open ParserTypes.Types
 
 module AbstractSyntaxTree =
 

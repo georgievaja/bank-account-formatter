@@ -48,6 +48,7 @@ module BankPartParsers =
             pMinimizedBankCode
             pPaddedBankCode
         ] |>> BankCode
+
     let pBankAccountPart : Parser<BankAccountFormatPart, unit> =
         choicews [
             pPrefix

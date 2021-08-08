@@ -1,22 +1,19 @@
 namespace BankAccountParser.Parser.Tests
 
 open Xunit.Abstractions
-open Xunit.Sdk
 open BankAccountParser.Parser.ParserTypes.Monads
-open BankAccountParser.Parser.ParserTypes.Types
 open BankAccountParser.Parser.AbstractSyntaxTree
 
 module ParserTests =
 
-    open System
     open Xunit
-    open FParsec
     open BankAccountParser.Parser.Parser
 
     type ParserTests(output:ITestOutputHelper) =
 
         [<Theory>]
         [<InlineData("p-ca/b")>]
+        [<InlineData("")>]
         member __.``Parsing should fail`` data =
             let result = parse data
             match result with
@@ -35,6 +32,23 @@ module ParserTests =
                       BankAccountPart(AccountNumber(MinimizedAccountNumber))
                       BankAccountSeparator(BankCodeSeparator)
                       BankAccountPart(BankCode(MinimizedBankCode))])
+
+            match result with
+            | (ParsingResult.Success s) -> Assert.Equal(expectedAst, s)
+            | (ParsingResult.Failure f) ->              
+                output.WriteLine(sprintf "%A" f)
+                Assert.True(false)
+
+        [<Theory>]
+        [<InlineData("PAB")>]
+        member __.``AST represented: PAB`` data =
+            let result = parse data
+        
+            let expectedAst =
+                 BankAccountFormatParts(
+                     [BankAccountPart(Prefix(PaddedPrefix));
+                      BankAccountPart(AccountNumber(PaddedAccountNumber))
+                      BankAccountPart(BankCode(PaddedBankCode))])
 
             match result with
             | (ParsingResult.Success s) -> Assert.Equal(expectedAst, s)

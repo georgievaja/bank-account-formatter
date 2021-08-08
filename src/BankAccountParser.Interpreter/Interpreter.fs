@@ -2,36 +2,28 @@
 open BankAccountParser.Parser.AbstractSyntaxTree
 open BankAccountParser.Teams.BankAccount.PublicTypes
 open BankAccountParser.Teams.BankAccount
+open BankAccountParser.Types.BankAccountConstants
 
 module Types =
     type FormattingFunction = BankAccount -> string
 
-    type UnexpectedFailureType =
-        | UnsupportedExistsExpression
-        | UnsupportedPredicateOperator
-        | UnsupportedQueryExpression
-
-    type InterpreterFailure =
-        | Unexpected of UnexpectedFailureType
-
 module Interpreter =
-    open Monads
     open Types
     
     let interpretPrefix (prefix: Prefix) : FormattingFunction =
         match prefix with
         | MinimizedPrefix -> (fun ds -> ds.Prefix.ToString())
-        | PaddedPrefix -> (fun ds -> ds.Prefix.ToString().PadLeft(6, '0'))
+        | PaddedPrefix -> (fun ds -> ds.Prefix.ToString().PadLeft(PrefixPaddingPlaces, '0'))
     
     let interpretBankCode (bankCode: BankCode) : FormattingFunction =
         match bankCode with
         | MinimizedBankCode -> (fun ds -> ds.BankCode.ToString())
-        | PaddedBankCode -> (fun ds -> ds.BankCode.ToString().PadLeft(4, '0'))
+        | PaddedBankCode -> (fun ds -> ds.BankCode.ToString().PadLeft(BankCodePaddingPlaces, '0'))
         
     let interpretAccountNumber (accountNumber: AccountNumber) : FormattingFunction =
         match accountNumber with
         | MinimizedAccountNumber -> (fun ds -> ds.AccountNumber.ToString())
-        | PaddedAccountNumber -> (fun ds -> ds.AccountNumber.ToString().PadLeft(10, '0'))
+        | PaddedAccountNumber -> (fun ds -> ds.AccountNumber.ToString().PadLeft(AccountNumberPaddingPlaces, '0'))
         
     let interpretBankAccountPart (bankAccountPart: BankAccountPart) : FormattingFunction =
         match bankAccountPart with
@@ -41,8 +33,8 @@ module Interpreter =
     
     let interpretSeparator (separator: Separator) : FormattingFunction =
         match separator with
-        | BankCodeSeparator -> (fun _ -> "/")
-        | PrefixSeparator -> (fun _ -> "-")
+        | BankCodeSeparator -> (fun _ -> BankCodeSeparatorLiteral)
+        | PrefixSeparator -> (fun _ -> PrefixSeparatorLiteral)
         
     let interpretBankAccountFormatPart (part : BankAccountFormatPart) : FormattingFunction =
         match part with

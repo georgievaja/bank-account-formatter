@@ -30,9 +30,6 @@ module ParserTypes =
             | UnexpectedCaseInsensitiveStringValue of FailureText
             | MessageValue of FailureText
             | Other of FailureText
-    
-        type SemanticFailureType =
-            | InvalidBooleanExpression
 
         /// Operation log for failure occurences
         type SyntacticLog =
@@ -41,12 +38,9 @@ module ParserTypes =
                 Position: ErrorPosition
                 Messages: FailureMessage []
             }
-
-        type SemanticLog = private SemanticLog of SemanticFailureType
     
         type OperationLog = 
             | Syntactic of SyntacticLog
-            | Semantic of SemanticLog
 
         module FailureText =
             let create (msg: string) =
@@ -98,10 +92,6 @@ module ParserTypes =
                                 |> ErrorMessageList.ToSortedArray
                                 |> Array.map FailureMessage.create
                 }
-
-        module SemanticLog =
-            let create (errorType: SemanticFailureType) =
-                SemanticLog errorType
                 
     module Monads =
         type ParsingResult<'TSuccess, 'TFailure> = 
