@@ -1,1 +1,1 @@
-# bank-account-parser
+# Standardní řetězce formátu tuzemského bankovního účtu
