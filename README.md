@@ -1,6 +1,6 @@
 # Standardní řetězce formátu čísla bankovního účtu v ČR
 
-|**Specifikátor formátu**|**Popis**|**Příklady*|
+|**Specifikátor formátu**|**Popis**|**Příklady**|
 |---|---|---|
 |"p"|Prefix bankovního účtu|19-10008890/200 -> 19|
 |"P"|Prefix bankovního účtu s doplněním nul zleva do šesti znaků|111-10008890/200 -> 000019|
