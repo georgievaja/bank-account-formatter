@@ -1,6 +1,5 @@
 ﻿namespace BankAccountFormatter.Parser
 
-open WhiteSpaceParsers
 open FParsec
 open AbstractSyntaxTree
 open CharParsers
@@ -8,49 +7,49 @@ open CharParsers
 module BankPartParsers =
     
     let pPaddedPrefix: Parser<Prefix, unit> =
-        pcharws 'P'
+        pchar 'P'
         |>> fun _ -> PaddedPrefix
 
     let pMinimizedPrefix: Parser<Prefix, unit> =
-        pcharws 'p'
+        pchar 'p'
         |>> fun _ -> MinimizedPrefix
 
     let pPrefix : Parser<BankAccountPart, unit> =
-        choicews [
+        choice [
             pMinimizedPrefix
             pPaddedPrefix
         ] |>> Prefix
         
     let pPaddedAccountNumber: Parser<AccountNumber, unit> =
-        pcharws 'A'
+        pchar 'A'
         |>> fun _ -> PaddedAccountNumber
 
     let pMinimizedAccountNumber: Parser<AccountNumber, unit> =
-        pcharws 'a'
+        pchar 'a'
         |>> fun _ -> MinimizedAccountNumber
 
     let pAccountNumber : Parser<BankAccountPart, unit> =
-        choicews [
+        choice [
             pMinimizedAccountNumber
             pPaddedAccountNumber
         ] |>> AccountNumber
         
     let pPaddedBankCode: Parser<BankCode, unit> =
-        pcharws 'B'
+        pchar 'B'
         |>> fun _ -> PaddedBankCode
 
     let pMinimizedBankCode: Parser<BankCode, unit> =
-        pcharws 'b'
+        pchar 'b'
         |>> fun _ -> MinimizedBankCode
 
     let pBankCode : Parser<BankAccountPart, unit> =
-        choicews [
+        choice [
             pMinimizedBankCode
             pPaddedBankCode
         ] |>> BankCode
 
     let pBankAccountPart : Parser<BankAccountFormatPart, unit> =
-        choicews [
+        choice [
             pPrefix
             pAccountNumber
             pBankCode

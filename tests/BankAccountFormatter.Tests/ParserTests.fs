@@ -3,6 +3,7 @@ namespace BankAccountFormatter.Parser.Tests
 open Xunit.Abstractions
 open BankAccountFormatter.Parser.ParserTypes.Monads
 open BankAccountFormatter.Parser.AbstractSyntaxTree
+open FluentAssertions
 
 module ParserTests =
 
@@ -11,14 +12,28 @@ module ParserTests =
 
     type ParserTests(output:ITestOutputHelper) =
 
+        [<Fact>]
+        member __.``Empty string should return empty collection``() =
+            let result = parse ""
+            let expectedAst =
+                BankAccountFormatParts([])
+
+            result.Should().Be(ParsingResult.Success expectedAst, null)
+
         [<Theory>]
-        [<InlineData("p-ca/b")>]
-        [<InlineData("")>]
-        member __.``Parsing should fail`` data =
-            let result = parse data
-            match result with
-            | (ParsingResult.Success _) -> Assert.True(false) 
-            | (ParsingResult.Failure _) -> Assert.True(true)                         
+        [<InlineData('k')>]
+        [<InlineData(' ')>]
+        [<InlineData(':')>]
+        member __.``Other chars should be included`` otherChar =
+            let result = parse ("pa"+otherChar)
+            let expectedAst =
+                BankAccountFormatParts(
+                     [BankAccountPart(Prefix(MinimizedPrefix));
+                      BankAccountPart(AccountNumber(MinimizedAccountNumber));
+                      OtherChar ((char)otherChar)])
+
+            result.Should().Be(ParsingResult.Success expectedAst, null)
+                       
                 
         [<Theory>]
         [<InlineData("p-a/b")>]

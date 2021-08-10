@@ -27,6 +27,7 @@ module AbstractSyntaxTree =
     type BankAccountFormatPart =
         | BankAccountSeparator of Separator
         | BankAccountPart of BankAccountPart
+        | OtherChar of char
         
     type BankAccountFormat =
         | BankAccountFormatParts of BankAccountFormatPart list

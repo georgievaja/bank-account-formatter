@@ -4,16 +4,17 @@ open FParsec
 open AbstractSyntaxTree
 open ParserTypes.Monads
 open ParserTypes.Types
-open WhiteSpaceParsers
 open BankPartParsers
 open SeparatorParsers
+open CharParsers
 
 module Parser =
                
     let pBankAccountFormatQuery : Parser<BankAccountFormatPart, unit> = 
-        choicews [
+        choice [
             pBankAccountPart
             pSeparator
+            pOtherChar
         ]
 
     let pBankAccountFormatFailFatally: Parser<BankAccountFormatPart, _> =
@@ -24,17 +25,17 @@ module Parser =
                 | _ -> Reply(FatalError, reply.Error)
   
     let pBankAccountFormat : Parser<BankAccountFormat, unit> = 
-        many1Till pBankAccountFormatFailFatally eof
+        manyTill pBankAccountFormatFailFatally eof
         |>> BankAccountFormatParts
 
     let parse (rule: string) : ParsingResult<BankAccountFormat, OperationLog> = 
       match run pBankAccountFormat rule with
        | ParserResult.Success (result, _, _) ->
-           Success result
+           ParsingResult.Success result
        | ParserResult.Failure (_, error, _) -> 
             SyntacticLog.create rule error
             |> Syntactic
-            |> Failure
+            |> ParsingResult.Failure
 
                                                     
 
