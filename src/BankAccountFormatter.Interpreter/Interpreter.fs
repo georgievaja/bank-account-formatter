@@ -1,7 +1,6 @@
 ﻿namespace BankAccountFormatter.Interpreter
 open BankAccountFormatter.Parser.AbstractSyntaxTree
 open BankAccountFormatter.Types.BankAccount.PublicTypes
-open BankAccountFormatter.Types.BankAccount
 open BankAccountFormatter.Types.BankAccountConstants
 
 module Types =
@@ -35,11 +34,15 @@ module Interpreter =
         match separator with
         | BankCodeSeparator -> (fun _ -> BankCodeSeparatorLiteral)
         | PrefixSeparator -> (fun _ -> PrefixSeparatorLiteral)
-        
+
+    let interpretOtherChar (otherChar: char) : FormattingFunction =
+         fun _ -> otherChar.ToString()
+
     let interpretBankAccountFormatPart (part : BankAccountFormatPart) : FormattingFunction =
         match part with
         | BankAccountPart ba -> interpretBankAccountPart ba
         | BankAccountSeparator se -> interpretSeparator se
+        | OtherChar oc -> interpretOtherChar oc
         
     let interpret (format: BankAccountFormat) : FormattingFunction =
         fun domesticBankAccount ->

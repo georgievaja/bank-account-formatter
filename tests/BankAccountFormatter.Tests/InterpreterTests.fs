@@ -65,3 +65,17 @@ module InterpreterTests =
             let formattingFunc = interpret minimizedFormat
             let result = formattingFunc testTeamData
             result.Should().Be("00011100100088880200", null);
+
+        [<Fact>]
+        member __.``Format with other chars returns correct result``() =
+            let minimizedFormat = BankAccountFormatParts(
+                [BankAccountPart(Prefix(PaddedPrefix));
+                 OtherChar ((char)' ');
+                 OtherChar ((char)' ');
+                 OtherChar ((char)' ');
+                 OtherChar ((char)'%');
+                 OtherChar ((char)'z');])
+
+            let formattingFunc = interpret minimizedFormat
+            let result = formattingFunc testTeamData
+            result.Should().Be("000111   %z", null);
