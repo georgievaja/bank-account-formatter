@@ -1,12 +1,12 @@
-﻿using BankAccountParser.Types;
+﻿using BankAccountFormatter.Types;
 using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BaParser = BankAccountParser.Parser.Parser;
+using BaParser = BankAccountFormatter.Parser.Parser;
 
-namespace BankAccountParser.Benchmarks.Benchmarks
+namespace BankAccountFormatter.Benchmarks.Benchmarks
 {
     [MemoryDiagnoser]
     public class BankAccountParserBenchmark

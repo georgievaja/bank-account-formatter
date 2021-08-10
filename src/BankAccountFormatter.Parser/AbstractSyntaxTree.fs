@@ -1,4 +1,4 @@
-﻿namespace BankAccountParser.Parser
+﻿namespace BankAccountFormatter.Parser
 
 
 module AbstractSyntaxTree =

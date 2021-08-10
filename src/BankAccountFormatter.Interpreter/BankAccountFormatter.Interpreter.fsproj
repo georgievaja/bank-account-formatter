@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Interpreter.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankAccountFormatter.Domain\BankAccountFormatter.Domain.fsproj" />
+    <ProjectReference Include="..\BankAccountFormatter.Parser\BankAccountFormatter.Parser.fsproj" />
+    <ProjectReference Include="..\BankAccountFormatter.Types\BankAccountFormatter.Types.fsproj" />
+  </ItemGroup>
+
+</Project>

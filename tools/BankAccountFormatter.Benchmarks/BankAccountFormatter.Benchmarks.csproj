@@ -11,8 +11,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\src\BankAccountParser.Interpreter\BankAccountParser.Interpreter.fsproj" />
-	  <ProjectReference Include="..\..\src\BankAccountParser.Parser\BankAccountParser.Parser.fsproj" />
+	  <ProjectReference Include="..\..\src\BankAccountFormatter.Interpreter\BankAccountFormatter.Interpreter.fsproj" />
+	  <ProjectReference Include="..\..\src\BankAccountFormatter.Parser\BankAccountFormatter.Parser.fsproj" />
 	</ItemGroup>
 
 </Project>

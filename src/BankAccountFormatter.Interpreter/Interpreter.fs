@@ -1,8 +1,8 @@
-﻿namespace BankAccountParser.Interpreter
-open BankAccountParser.Parser.AbstractSyntaxTree
-open BankAccountParser.Types.BankAccount.PublicTypes
-open BankAccountParser.Types.BankAccount
-open BankAccountParser.Types.BankAccountConstants
+﻿namespace BankAccountFormatter.Interpreter
+open BankAccountFormatter.Parser.AbstractSyntaxTree
+open BankAccountFormatter.Types.BankAccount.PublicTypes
+open BankAccountFormatter.Types.BankAccount
+open BankAccountFormatter.Types.BankAccountConstants
 
 module Types =
     type FormattingFunction = BankAccount -> string

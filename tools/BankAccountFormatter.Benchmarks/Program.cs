@@ -1,4 +1,4 @@
-using BankAccountParser.Benchmarks.Benchmarks;
+using BankAccountFormatter.Benchmarks.Benchmarks;
 using BenchmarkDotNet.Running;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BankAccountParser.Benchmarks
+namespace BankAccountFormatter.Benchmarks
 {
     public class Program
     {

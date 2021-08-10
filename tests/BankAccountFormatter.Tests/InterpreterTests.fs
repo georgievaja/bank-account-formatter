@@ -1,14 +1,14 @@
-﻿namespace BankAccountParser.Parser.Tests
+﻿namespace BankAccountFormatter.Parser.Tests
 
-open BankAccountParser.Parser.AbstractSyntaxTree
-open BankAccountParser.Types.BankAccount.PublicTypes
+open BankAccountFormatter.Parser.AbstractSyntaxTree
+open BankAccountFormatter.Types.BankAccount.PublicTypes
 open Xunit.Abstractions
-open BankAccountParser.Parser.ParserTypes.Monads
-open BankAccountParser.Interpreter.Interpreter
+open BankAccountFormatter.Parser.ParserTypes.Monads
+open BankAccountFormatter.Interpreter.Interpreter
 
 module InterpreterTests =
     open Xunit
-    open BankAccountParser.Parser.Parser
+    open BankAccountFormatter.Parser.Parser
 
     let testTeamData =
         {

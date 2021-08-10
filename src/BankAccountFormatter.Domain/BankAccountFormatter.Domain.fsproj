@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>BankAccountParser.Domain</RootNamespace>
+    <RootNamespace>BankAccountFormatter.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BankAccountParser.Types\BankAccountParser.Types.fsproj" />
+    <ProjectReference Include="..\BankAccountFormatter.Types\BankAccountFormatter.Types.fsproj" />
   </ItemGroup>
 
 </Project>

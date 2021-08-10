@@ -1,4 +1,4 @@
-﻿namespace BankAccountParser.Types
+﻿namespace BankAccountFormatter.Types
 
 module BankAccountConstants =
 

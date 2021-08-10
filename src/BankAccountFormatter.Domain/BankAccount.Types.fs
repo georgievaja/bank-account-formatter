@@ -1,4 +1,4 @@
-﻿namespace BankAccountParser.Types
+﻿namespace BankAccountFormatter.Types
 open System
 
 module BankAccount =

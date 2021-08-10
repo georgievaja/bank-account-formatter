@@ -1,13 +1,13 @@
-namespace BankAccountParser.Parser.Tests
+namespace BankAccountFormatter.Parser.Tests
 
 open Xunit.Abstractions
-open BankAccountParser.Parser.ParserTypes.Monads
-open BankAccountParser.Parser.AbstractSyntaxTree
+open BankAccountFormatter.Parser.ParserTypes.Monads
+open BankAccountFormatter.Parser.AbstractSyntaxTree
 
 module ParserTests =
 
     open Xunit
-    open BankAccountParser.Parser.Parser
+    open BankAccountFormatter.Parser.Parser
 
     type ParserTests(output:ITestOutputHelper) =
 

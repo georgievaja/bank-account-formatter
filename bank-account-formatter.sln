@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountParser.Parser", "src\BankAccountParser.Parser\BankAccountParser.Parser.fsproj", "{1E5B2B8A-71B6-4F7B-AB0C-ADCC7B5E7957}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountFormatter.Parser", "src\BankAccountFormatter.Parser\BankAccountFormatter.Parser.fsproj", "{1E5B2B8A-71B6-4F7B-AB0C-ADCC7B5E7957}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountParser.Language", "src\BankAccountParser.Language\BankAccountParser.Language.fsproj", "{9266613E-E275-4CB2-94DD-07FB31C173B1}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountFormatter.Language", "src\BankAccountFormatter.Language\BankAccountFormatter.Language.fsproj", "{9266613E-E275-4CB2-94DD-07FB31C173B1}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountParser.Interpreter", "src\BankAccountParser.Interpreter\BankAccountParser.Interpreter.fsproj", "{60303BE5-48EA-49AA-8B18-51D598DE0DE0}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountFormatter.Interpreter", "src\BankAccountFormatter.Interpreter\BankAccountFormatter.Interpreter.fsproj", "{60303BE5-48EA-49AA-8B18-51D598DE0DE0}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountParser.Tests", "tests\BankAccountParser.Tests\BankAccountParser.Tests.fsproj", "{414F4D71-5D1B-4BDF-8A4B-8F9362D6B3BD}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountFormatter.Tests", "tests\BankAccountFormatter.Tests\BankAccountFormatter.Tests.fsproj", "{414F4D71-5D1B-4BDF-8A4B-8F9362D6B3BD}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountParser.Domain", "src\BankAccountParser.Domain\BankAccountParser.Domain.fsproj", "{0DD64B1F-71F3-48A9-82A6-E04D1373DFB1}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountFormatter.Domain", "src\BankAccountFormatter.Domain\BankAccountFormatter.Domain.fsproj", "{0DD64B1F-71F3-48A9-82A6-E04D1373DFB1}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountParser.Types", "src\BankAccountParser.Types\BankAccountParser.Types.fsproj", "{4BAA0301-A2D5-4962-876B-3978CFDCC4F9}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "BankAccountFormatter.Types", "src\BankAccountFormatter.Types\BankAccountFormatter.Types.fsproj", "{4BAA0301-A2D5-4962-876B-3978CFDCC4F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AE0D5267-EB30-468E-92E4-5BFB890A3BC9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{8759C557-5B37-47ED-A857-7C6A39EE898E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountParser.Benchmarks", "tools\BankAccountParser.Benchmarks\BankAccountParser.Benchmarks.csproj", "{D3435C8C-CEE7-4AA7-8ADF-11B8CE004A9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountFormatter.Benchmarks", "tools\BankAccountFormatter.Benchmarks\BankAccountFormatter.Benchmarks.csproj", "{D3435C8C-CEE7-4AA7-8ADF-11B8CE004A9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
