@@ -10,4 +10,4 @@
 |"B"|Kód banky s doplněním nul zleva do čtyřech znaků|19-10008890/200 -> 0200|
 |"-"|Oddělovač prefixu a čísla účtu|19-10008890/200 -> -|
 |"/"|Oddělovač čísla účtu a kódu banky|19-10008890/200 -> /|
-|Jakýkoli jiný znak|Znak je zkopírován do výsledného řetězce beze změny|19-10008890/200 (abc) -> 10008890bc|
+|Jakýkoliv jiný znak|Znak je zkopírován do výsledného řetězce beze změny|19-10008890/200 (abc) -> 10008890bc|
