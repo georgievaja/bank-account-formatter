@@ -9,7 +9,7 @@ open Xunit
 
 module InterpreterTests =
 
-    let testTeamData =
+    let testBankAccountData =
         {
             Prefix = 111
             AccountNumber = 10008888L
@@ -28,7 +28,7 @@ module InterpreterTests =
                  BankAccountPart(BankCode(MinimizedBankCode))])
 
             let formattingFunc = interpret minimizedFormat
-            let result = formattingFunc testTeamData
+            let result = formattingFunc testBankAccountData
             result.Should().Be("111-10008888/200", null);
 
         [<Fact>]
@@ -39,7 +39,7 @@ module InterpreterTests =
                  BankAccountPart(BankCode(MinimizedBankCode))])
 
             let formattingFunc = interpret minimizedFormat
-            let result = formattingFunc testTeamData
+            let result = formattingFunc testBankAccountData
             result.Should().Be("11110008888200", null);
 
         [<Fact>]
@@ -52,7 +52,7 @@ module InterpreterTests =
                  BankAccountPart(BankCode(PaddedBankCode))])
 
             let formattingFunc = interpret minimizedFormat
-            let result = formattingFunc testTeamData
+            let result = formattingFunc testBankAccountData
             result.Should().Be("000111-0010008888/0200", null);
 
         [<Fact>]
@@ -63,7 +63,7 @@ module InterpreterTests =
                  BankAccountPart(BankCode(PaddedBankCode))])
 
             let formattingFunc = interpret minimizedFormat
-            let result = formattingFunc testTeamData
+            let result = formattingFunc testBankAccountData
             result.Should().Be("00011100100088880200", null);
 
         [<Fact>]
@@ -77,5 +77,5 @@ module InterpreterTests =
                  OtherChar ((char)'z');])
 
             let formattingFunc = interpret minimizedFormat
-            let result = formattingFunc testTeamData
+            let result = formattingFunc testBankAccountData
             result.Should().Be("000111   %z", null);
